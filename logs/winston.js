@@ -4,7 +4,7 @@ const { combine, label, json,errors } = format;
 require("winston-daily-rotate-file");
 
 //Label
-const CATEGORY = "birds-eye-fleet-controller-logs";
+const CATEGORY = "comp-main-logs";
 
 //DailyRotateFile func()
 const fileRotateTransport = new transports.DailyRotateFile({
