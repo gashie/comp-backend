@@ -43,7 +43,9 @@ const loadMiddleware = () => {
 
 const middlewares = loadMiddleware();
 const controllers = loadControllers(path.join(__dirname, '../controllers'));
-
+console.log('====================================');
+console.log(controllers);
+console.log('====================================');
 router.all('*', async (req, res,next) => {
     try {
         const path = req.path;

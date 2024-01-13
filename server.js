@@ -55,10 +55,10 @@ var __dirname = path.resolve()
 app.use('/upload', express.static(path.join(__dirname, '/upload')))
 // app.use('/Selfie', express.static(path.join(__dirname, '/Selfie')))
 
-app.use("/api/v1/dynamo", dynamoroutes);
+app.use("/api/v1/comp/dynamo", dynamoroutes);
 
 //Mount routes
-app.use("/api/v1/comp", routes);
+app.use("/api/v1/comp/static", routes);
 
 app.use(errorHandler);
 
