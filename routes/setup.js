@@ -7,6 +7,9 @@ const { VerifyUser, Logout } = require("../controllers/account/auth");
 const { protect } = require("../middleware/auth");
 const { CreateFleetAgentPolicy, ViewFleetAgentPolicy, UpdateFleetAgentPolicy, CreateEnrollmentToken, FindEnrollmentToken, FindPolicyAndToken } = require("../controllers/fleet/policy");
 const { CreateFleetConfigurations, ViewFleetConfigurations, UpdateFleetConfigurations } = require("../controllers/fleet/fleet_config");
+const { CreatePushConfig, ViewPushConfig, UpdatePushConfig } = require("../controllers/push_config/push_config");
+const { CreateLocationPolicy, ViewLocationPolicy, UpdateLocationPolicy } = require("../controllers/synthetics/location");
+const { CreateMonitors } = require("../controllers/synthetics/monitor_config");
 
 
 //routes
@@ -42,6 +45,21 @@ router.route("/view_enrollmentoken").post(FindEnrollmentToken);
 router.route("/create_fleet").post(CreateFleetConfigurations);
 router.route("/view_fleet").post(ViewFleetConfigurations);
 router.route("/update_fleet").post(UpdateFleetConfigurations);
+
+//push configurations service
+router.route("/create_push_config").post(CreatePushConfig);
+router.route("/view_push_config").post(ViewPushConfig);
+router.route("/update_push_config").post(UpdatePushConfig);
+
+//location policies
+router.route("/create_location").post(CreateLocationPolicy);
+router.route("/view_location").post(ViewLocationPolicy);
+router.route("/update_location").post(UpdateLocationPolicy);
+
+//monitors
+router.route("/create_monitor").post(CreateMonitors);
+router.route("/view_monitor").post(ViewLocationPolicy);
+router.route("/update_monitor").post(UpdateLocationPolicy);
 
 //user login auth
 router.route("/auth").post(protect, VerifyUser);

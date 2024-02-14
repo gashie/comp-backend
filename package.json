@@ -25,6 +25,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-fileupload": "^1.4.3",
+    "firebase-admin": "^12.0.0",
     "form-data": "^4.0.0",
     "generate-api-key": "^1.0.2",
     "helmet": "^7.1.0",
